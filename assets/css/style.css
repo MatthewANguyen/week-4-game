@@ -1,0 +1,35 @@
+html {
+	background-image: url("assets/images/2-StarWars.jpg");
+	width: 100%;
+}
+
+h1 {
+	font-size: 16px;
+}
+
+.character {
+	height: 170px;
+	width: 130px;
+	border-width: 2px;
+	border-color: green;
+	border-style: solid;
+	display: inline-block;
+}
+
+.enemy-character {
+	height: 170px;
+	width: 130px;
+	border-width: 2px;
+	border-color: red;
+	border-style: solid;
+	display: inline-block;
+}
+
+.name {
+	font-size: 14px;
+	position: top;
+}
+
+.health {
+	font-size: 14px;
+}
