@@ -1,10 +1,19 @@
 html {
-	background-image: url("assets/images/2-StarWars.jpg");
-	width: 100%;
+	background-image: url("../images/background.jpg");
+	height: 1000px;
+}
+
+header {
+	font-size: 18px;
+	height: 80px;
+	line-height: 80px;
+	font-family: 'Poller One', cursive;
 }
 
 h1 {
 	font-size: 16px;
+	font-weight: normal;
+	font-family: 'Poller One', cursive;
 }
 
 .character {

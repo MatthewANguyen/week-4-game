@@ -1,9 +1,9 @@
 
 $(document).ready(function() {	
 	var Kenobi = {
-		hp:100,
+		hp:120,
 		attack:8,
-		counter:10,
+		counter:20,
 		attackPlus:8
 	};
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
 	};
 
 	var Maul = {
-		hp:120,
+		hp:100,
 		attack:10,
 		counter:25,
 		attackPlus:7
@@ -80,6 +80,12 @@ $(document).ready(function() {
 		$("#character-selection").empty();
 	}
 
+	/**
+	 *  The following Bind functions will bind each character picture to an event handler
+	 *  that moves the chosen character to the Defender element. Binding a hero that does
+	 *  not exist anymore on the page should be harmless.
+	 */
+
 	function kenobiBind() {
 		$("#Kenobi").on("click", function() {
 			$("#Kenobi").remove();
@@ -131,6 +137,10 @@ $(document).ready(function() {
 		sidiousBind();
 		maulBind();
 	}
+	/**
+	 * The following event handlers are the initial handlers that allow the user to
+	 * select their character of choice.
+	 */
 
 	$("#Kenobi-click").on("click", function() {
 		playerCharacter = Kenobi;
@@ -155,7 +165,7 @@ $(document).ready(function() {
 	$("#Sidious-click").on("click", function() {
 		playerCharacter = Sidious;
 		$("#your-character").append("<div class='character'><div class='name'>Darth Sidious</div>" + sidiousImage + "<div id='current-health' class='health'>90</div></div>");
-		$("#enemy-characters").append("<div class='row'><div id='Obi-Wan Kenobi' class='enemy-character'><div class='name'>Obi-Wan Kenobi</div>" + kenobiImage + "<div class='health'>100</div></div><div id='Luke' class='enemy-character'><div class='name'>Luke Skywalker</div>" + lukeImage + "<div class='health'>150</div></div><div id='Maul' class='enemy-character'><div class='name'>Darth Maul</div>" + maulImage + "<div class='health'>120</div></div></div></div>");
+		$("#enemy-characters").append("<div class='row'><div id='Kenobi' class='enemy-character'><div class='name'>Obi-Wan Kenobi</div>" + kenobiImage + "<div class='health'>100</div></div><div id='Luke' class='enemy-character'><div class='name'>Luke Skywalker</div>" + lukeImage + "<div class='health'>150</div></div><div id='Maul' class='enemy-character'><div class='name'>Darth Maul</div>" + maulImage + "<div class='health'>120</div></div></div></div>");
 		clearSelectionScreen();
 		kenobiBind();
 		lukeBind();
@@ -165,7 +175,7 @@ $(document).ready(function() {
 	$("#Maul-click").on("click", function() {
 		playerCharacter = Maul;
 		$("#your-character").append("<div class='character'><div class='name'>Darth Maul</div>" + maulImage + "<div id='current-health' class='health'>120</div></div>");
-		$("#enemy-characters").append("<div class='row'><div id='Obi-Wan Kenobi' class='enemy-character'><div class='name'>Obi-Wan Kenobi</div>" + kenobiImage + "<div class='health'>100</div></div><div id='Luke' class='enemy-character'><div class='name'>Luke Skywalker</div>" + lukeImage + "<div class='health'>150</div></div><div id='Sidious' class='enemy-character'><div class='name'>Darth Sidious</div>" + sidiousImage + "<div class='health'>90</div></div></div></div>");
+		$("#enemy-characters").append("<div class='row'><div id='Kenobi' class='enemy-character'><div class='name'>Obi-Wan Kenobi</div>" + kenobiImage + "<div class='health'>100</div></div><div id='Luke' class='enemy-character'><div class='name'>Luke Skywalker</div>" + lukeImage + "<div class='health'>150</div></div><div id='Sidious' class='enemy-character'><div class='name'>Darth Sidious</div>" + sidiousImage + "<div class='health'>90</div></div></div></div>");
 		clearSelectionScreen();
 		kenobiBind();
 		lukeBind();
@@ -180,18 +190,5 @@ $(document).ready(function() {
 			$("#enemy-health").text(currentOpponent.hp);
 		}
 	});
-
-	// attack(playerCharacter, currentOpponent);
-	// console.log(playerCharacter.hp + " " + currentOpponent.hp);
-	// attack(playerCharacter, currentOpponent);
-	// console.log(playerCharacter.hp + " " + currentOpponent.hp);
-	// attack(playerCharacter, currentOpponent);
-	// console.log(playerCharacter.hp + " " + currentOpponent.hp);
-	// attack(playerCharacter, currentOpponent);
-	// console.log(playerCharacter.hp + " " + currentOpponent.hp);
-	// attack(playerCharacter, currentOpponent);
-	// console.log(playerCharacter.hp + " " + currentOpponent.hp);
-
-
 });
 
